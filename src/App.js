@@ -4,15 +4,17 @@ import { View } from '@vkontakte/vkui';
 import '@vkontakte/vkui/dist/vkui.css';
 
 import Home from './panels/Home';
-import Persik from './panels/Persik';
+import ClassChooser from './panels/ClassChooser';
 
 class App extends React.Component {
+
 	constructor(props) {
 		super(props);
 
 		this.state = {
 			activePanel: 'home',
 			fetchedUser: null,
+			class: ''
 		};
 	}
 
@@ -36,8 +38,8 @@ class App extends React.Component {
 	render() {
 		return (
 			<View activePanel={this.state.activePanel}>
-				<Home id="home" fetchedUser={this.state.fetchedUser} go={this.go} />
-				<Persik id="persik" go={this.go} />
+				<Home id="home" fetchedUser={this.state.fetchedUser} go={this.go} state={this.state} />
+				<ClassChooser id="classchooser" go={this.go} state={this.state} />
 			</View>
 		);
 	}

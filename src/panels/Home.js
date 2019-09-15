@@ -1,27 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Panel, ListItem, Button, Group, Div, Avatar, PanelHeader } from '@vkontakte/vkui';
+import { Panel, FormLayout, SelectMimicry, PanelHeader } from '@vkontakte/vkui';
+import logo_full from '../img/nwtt_full.svg';
+import '../main.css';
 
-const Home = ({ id, go, fetchedUser }) => (
-	<Panel id={id}>
-		<PanelHeader>Example</PanelHeader>
-		{fetchedUser &&
-		<Group title="User Data Fetched with VK Connect">
-			<ListItem
-				before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
-				description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
-			>
-				{`${fetchedUser.first_name} ${fetchedUser.last_name}`}
-			</ListItem>
-		</Group>}
+const Home = ({ id, go, state }) => (
+	<Panel id={id} theme={"white"}>
+		<PanelHeader>NeoWave Timetable</PanelHeader>
+		<img src={logo_full} alt="Logo" className="logo"/>
 
-		<Group title="Navigation Example">
-			<Div>
-				<Button size="xl" level="2" onClick={go} data-to="persik">
-					Show me the Persik, please
-				</Button>
-			</Div>
-		</Group>
+		<FormLayout>
+			<SelectMimicry
+				top="Выберите свой класс"
+				placeholder="Не выбран"
+				onClick={() => go()}
+				data-to={"classchooser"}
+			>{state.class}</SelectMimicry>
+		</FormLayout>
 	</Panel>
 );
 
