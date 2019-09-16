@@ -1,5 +1,5 @@
 {
-  "main.css": "/nwtimetable/static/css/main.ad7ae6d5.chunk.css",
+  "main.css": "/nwtimetable/static/css/main.981e17a2.chunk.css",
   "main.js": "/nwtimetable/static/js/main.cb62ce89.chunk.js",
   "main.js.map": "/nwtimetable/static/js/main.cb62ce89.chunk.js.map",
   "runtime~main.js": "/nwtimetable/static/js/runtime~main.bd076a60.js",
@@ -8,9 +8,9 @@
   "static/js/2.5f9b98f8.chunk.js": "/nwtimetable/static/js/2.5f9b98f8.chunk.js",
   "static/js/2.5f9b98f8.chunk.js.map": "/nwtimetable/static/js/2.5f9b98f8.chunk.js.map",
   "index.html": "/nwtimetable/index.html",
-  "precache-manifest.b4d9e8eec04525f76ef23b8b9d995891.js": "/nwtimetable/precache-manifest.b4d9e8eec04525f76ef23b8b9d995891.js",
+  "precache-manifest.688af8360ad1406588683ff9c0a0fe23.js": "/nwtimetable/precache-manifest.688af8360ad1406588683ff9c0a0fe23.js",
   "service-worker.js": "/nwtimetable/service-worker.js",
   "static/css/2.9686c3aa.chunk.css.map": "/nwtimetable/static/css/2.9686c3aa.chunk.css.map",
-  "static/css/main.ad7ae6d5.chunk.css.map": "/nwtimetable/static/css/main.ad7ae6d5.chunk.css.map",
+  "static/css/main.981e17a2.chunk.css.map": "/nwtimetable/static/css/main.981e17a2.chunk.css.map",
   "static/media/nwtt_full.svg": "/nwtimetable/static/media/nwtt_full.6265858a.svg"
 }

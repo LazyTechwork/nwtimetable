@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "f28f85f232e146c58cd8",
-    "url": "/nwtimetable/static/css/main.ad7ae6d5.chunk.css"
+    "revision": "b4fb3de9f8c34549dc57",
+    "url": "/nwtimetable/static/css/main.981e17a2.chunk.css"
   },
   {
-    "revision": "f28f85f232e146c58cd8",
+    "revision": "b4fb3de9f8c34549dc57",
     "url": "/nwtimetable/static/js/main.cb62ce89.chunk.js"
   },
   {
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/nwtimetable/static/media/nwtt_full.6265858a.svg"
   },
   {
-    "revision": "12b972f59d3ee45d9ff2fe1346a36fff",
+    "revision": "f73f3ee398c17be54833681349f769c5",
     "url": "/nwtimetable/index.html"
   }
 ];
