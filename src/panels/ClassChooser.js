@@ -6,7 +6,7 @@ import {AppConsumer} from "../App";
 
 const ClassChooser = ({id}) => (
     <AppConsumer>
-        {(context, actions) => {
+        {({context, actions}) => {
             return (<Panel id={id} theme={"white"}>
                 <PanelHeader>NeoWave Timetable</PanelHeader>
                 <PanelHeader>
