@@ -6,17 +6,13 @@ import '@vkontakte/vkui/dist/vkui.css';
 import Home from './panels/Home';
 import ClassChooser from './panels/ClassChooser';
 
-const AppContext = React.createContext();
-export const AppProvider = AppContext.Provider;
-export const AppConsumer = AppContext.Consumer;
-
 class App extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
             activePanel: 'home',
-            class: ''
+            clazz: ''
         }
     }
 
@@ -33,22 +29,19 @@ class App extends React.Component {
         connect.send('VKWebAppGetUserInfo', {});*/
     }
 
+    go = (panel) => {
+        this.setState({activePanel: panel});
+    };
+
+    changeClass = (clazz) => {
+        this.setState({clazz: clazz, activePanel: 'home'});
+    };
+
     render() {
         return (
             <View activePanel={this.state.activePanel}>
-                <AppProvider value={{
-                    state: this.state, actions: {
-                        updateState: (ns) => {
-                            this.setState(ns);
-                        },
-                        go: (panel) => {
-                            this.setState({activePanel: panel})
-                        }
-                    }
-                }}>
-                    <Home id="home"/>
-                    <ClassChooser id="classchooser"/>
-                </AppProvider>
+                <Home id="home" go={this.go} clazz={this.state.clazz} state={this.state}/>
+                <ClassChooser id="classchooser" clazz={this.state.clazz} changeClass={this.changeClass}/>
             </View>
         );
     }
