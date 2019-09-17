@@ -6,11 +6,15 @@ import Div from "@vkontakte/vkui/dist/components/Div/Div";
 import Button from "@vkontakte/vkui/dist/components/Button/Button";
 
 const Home = props => (
-    <Panel id={props.id} theme={props.state.theme}>
+    <Panel id={props.id}>
         <PanelHeader>NeoWave Timetable</PanelHeader>
-        <p className="time">{TimeFormat.asString('hh:mm:ss', props.state.time)}</p>
-        <p className="date text-muted">{TimeFormat.asString('dd.MM.yyyy')}</p>
-
+        <Group>
+            <Div>
+                <p className="time">{TimeFormat.asString('hh:mm:ss', props.state.time)}</p>
+                <p className="date text-muted">{TimeFormat.asString('dd.MM.yyyy')} / Выбран
+                    класс: {props.state.group}</p>
+            </Div>
+        </Group>
         <Group>
             <List>
                 <Cell>
@@ -27,8 +31,14 @@ const Home = props => (
         </Group>
 
         <Div style={{display: 'flex'}}>
-            <Button size="l" stretched style={{ marginRight: 8 }}>Расписание уроков</Button>
+            <Button size="l" stretched style={{marginRight: 8}}>Расписание уроков</Button>
             <Button size="l" stretched level="secondary">Расписание звонков</Button>
+        </Div>
+        <Div>
+            <Button level="tertiary" stretched onClick={() => {
+                props.actions.updateState({group: ''});
+                props.actions.go('home');
+            }}>Сменить класс</Button>
         </Div>
     </Panel>
 );
