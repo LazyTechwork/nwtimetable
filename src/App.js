@@ -4,15 +4,16 @@ import '@vkontakte/vkui/dist/vkui.css';
 
 import Home from './panels/Home';
 import ChooseGroup from './panels/ChooseGroup';
+import Timetable from "./panels/Timetable";
 
 class App extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            activePanel: 'home',
+            activePanel: 'Timetable',
             group: '',
-            theme: 'white',
+            theme: 'light',
         }
     }
 
@@ -27,6 +28,17 @@ class App extends React.Component {
             }
         });
         connect.send('VKWebAppGetUserInfo', {});*/
+        this.intervalID = setInterval(() => this.tick(), 1000);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.intervalID);
+    }
+
+    tick() {
+        this.setState({
+            time: new Date(),
+        })
     }
 
     actions = {
@@ -45,6 +57,7 @@ class App extends React.Component {
             <View activePanel={this.state.activePanel}>
                 <Home id="home" state={this.state} actions={this.actions}/>
                 <ChooseGroup id="ChooseGroup" state={this.state} actions={this.actions}/>
+                <Timetable id="Timetable" state={this.state} actions={this.actions}/>
             </View>
         );
     }

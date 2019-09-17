@@ -14,9 +14,10 @@ const Home = props => (
                 onClick={() => props.actions.go('ChooseGroup')}
             >{props.state.group}</SelectMimicry>
 
-                <Div style={{display: 'flex'}}>
-                    <Button level={"primary"} size={"l"} stretched disabled={props.state.group === ''}>Продолжить</Button>
-                </Div>
+            <Div style={{display: 'flex'}}>
+                <Button level={"primary"} size={"l"} stretched disabled={props.state.group === ''}
+                        onClick={() => props.actions.go('Timetable')}>Продолжить</Button>
+            </Div>
         </FormLayout>
     </Panel>
 );
