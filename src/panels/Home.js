@@ -2,10 +2,9 @@ import React from 'react';
 import {FormLayout, Panel, PanelHeader, SelectMimicry} from '@vkontakte/vkui';
 import logo_full from '../img/nwtt_full.svg';
 import '../main.css';
-import {AppConsumer} from "../App";
 
-const Home = (id,go,clazz,state) => (
-    <Panel id={id} theme={"white"}>
+const Home = props => (
+    <Panel id={props.id} theme={props.state.theme}>
         <PanelHeader>NeoWave Timetable</PanelHeader>
         <img src={logo_full} alt="Logo" className="logo"/>
 
@@ -13,8 +12,8 @@ const Home = (id,go,clazz,state) => (
             <SelectMimicry
                 top="Выберите свой класс"
                 placeholder="Не выбран"
-                onclick={()=>go('changeclass')}
-            >{clazz}</SelectMimicry>
+                onClick={() => props.actions.go('ChooseGroup')}
+            >{props.state.group}</SelectMimicry>
         </FormLayout>
     </Panel>
 );
