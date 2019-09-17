@@ -13,7 +13,7 @@ class App extends React.Component {
         this.state = {
             activePanel: 'home',
             group: '',
-            theme: 'light',
+            theme: 'white',
         }
     }
 
@@ -29,6 +29,12 @@ class App extends React.Component {
         });
         connect.send('VKWebAppGetUserInfo', {});*/
         this.intervalID = setInterval(() => this.tick(), 1000);
+        let group = localStorage.getItem('group');
+        console.log(localStorage);
+        if (group !== null && group !== '') {
+            this.setState({group: localStorage.getItem('group')});
+            this.actions.go('Timetable');
+        }
     }
 
     componentWillUnmount() {
@@ -48,6 +54,12 @@ class App extends React.Component {
 
         updateState: (state) => {
             this.setState(state);
+        },
+
+        setGroup: (group) => {
+            localStorage.setItem('group', group.group);
+            this.actions.updateState(group);
+            this.actions.go('Timetable');
         }
     };
 

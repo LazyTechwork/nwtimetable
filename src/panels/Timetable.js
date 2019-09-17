@@ -16,6 +16,11 @@ const Home = props => (
             </Div>
         </Group>
         <Group>
+            <Div>
+                <p className="text-danger hm-warning">!!! ДИРЕКТОР НА 3 ЭТАЖЕ !!!</p>
+            </Div>
+        </Group>
+        <Group>
             <List>
                 <Cell>
                     <InfoRow title="Текущий урок">

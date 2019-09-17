@@ -10,36 +10,31 @@ const ChooseGroup = props => (
             <List>
                 <Cell
                     onClick={() => {
-                        props.actions.updateState({group: '10-1'});
-                        props.actions.go('home')
+                        props.actions.setGroup({group: '10-1'});
                     }}
                     asideContent={props.state.group === '10-1' ? <Icon24Done fill="var(--accent)"/> : null}
                 >10-1</Cell>
                 <Cell
                     onClick={() => {
-                        props.actions.updateState({group: '10-2'});
-                        props.actions.go('home')
+                        props.actions.setGroup({group: '10-2'});
                     }}
                     asideContent={props.state.group === '10-2' ? <Icon24Done fill="var(--accent)"/> : null}
                 >10-2</Cell>
                 <Cell
                     onClick={() => {
-                        props.actions.updateState({group: '10-3'});
-                        props.actions.go('home')
+                        props.actions.setGroup({group: '10-3'});
                     }}
                     asideContent={props.state.group === '10-3' ? <Icon24Done fill="var(--accent)"/> : null}
                 >10-3</Cell>
                 <Cell
                     onClick={() => {
-                        props.actions.updateState({group: '10-4'});
-                        props.actions.go('home')
+                        props.actions.setGroup({group: '10-4'});
                     }}
                     asideContent={props.state.group === '10-4' ? <Icon24Done fill="var(--accent)"/> : null}
                 >10-4</Cell>
                 <Cell
                     onClick={() => {
-                        props.actions.updateState({group: '10-5'});
-                        props.actions.go('home')
+                        props.actions.setGroup({group: '10-5'});
                     }}
                     asideContent={props.state.group === '10-5' ? <Icon24Done fill="var(--accent)"/> : null}
                 >10-5</Cell>

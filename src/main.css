@@ -5,17 +5,26 @@
 }
 
 .text-muted {
-    color: var(--text-secondary);
+    color: var(--text_muted);
+}
+
+.text-danger {
+    color: var(--dynamic_red);
+}
+
+.hm-warning {
     text-align: center;
+    margin: 0;
 }
 
 .time {
-    margin: 10px 0 0;
+    margin: 0;
     text-align: center;
     font-size: 57pt;
     font-weight: bold;
 }
 
 .date {
-    margin: 0 0 40px;
+    margin: 0;
+    text-align: center;
 }
