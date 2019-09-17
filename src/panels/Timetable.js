@@ -30,10 +30,12 @@ const Home = props => (
             </List>
         </Group>
 
-        <Div style={{display: 'flex'}}>
-            <Button size="l" stretched style={{marginRight: 8}}>Расписание уроков</Button>
-            <Button size="l" stretched level="secondary">Расписание звонков</Button>
-        </Div>
+        <Group>
+            <Div style={{display: 'flex'}}>
+                <Button size="l" stretched style={{marginRight: 8}}>Расписание уроков</Button>
+                <Button size="l" stretched level="secondary">Расписание звонков</Button>
+            </Div>
+        </Group>
         <Div>
             <Button level="tertiary" stretched onClick={() => {
                 props.actions.updateState({group: ''});

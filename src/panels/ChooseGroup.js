@@ -10,31 +10,39 @@ const ChooseGroup = props => (
             <List>
                 <Cell
                     onClick={() => {
-                        props.actions.updateState({group: '1'});
+                        props.actions.updateState({group: '10-1'});
                         props.actions.go('home')
                     }}
-                    asideContent={props.state.group === '1' ? <Icon24Done fill="var(--accent)"/> : null}
-                >
-                    1
-                </Cell>
+                    asideContent={props.state.group === '10-1' ? <Icon24Done fill="var(--accent)"/> : null}
+                >10-1</Cell>
                 <Cell
                     onClick={() => {
-                        props.actions.updateState({group: '2'});
+                        props.actions.updateState({group: '10-2'});
                         props.actions.go('home')
                     }}
-                    asideContent={props.state.group === '2' ? <Icon24Done fill="var(--accent)"/> : null}
-                >
-                    2
-                </Cell>
+                    asideContent={props.state.group === '10-2' ? <Icon24Done fill="var(--accent)"/> : null}
+                >10-2</Cell>
                 <Cell
                     onClick={() => {
-                        props.actions.updateState({group: '3'});
+                        props.actions.updateState({group: '10-3'});
                         props.actions.go('home')
                     }}
-                    asideContent={props.state.group === '3' ? <Icon24Done fill="var(--accent)"/> : null}
-                >
-                    3
-                </Cell>
+                    asideContent={props.state.group === '10-3' ? <Icon24Done fill="var(--accent)"/> : null}
+                >10-3</Cell>
+                <Cell
+                    onClick={() => {
+                        props.actions.updateState({group: '10-4'});
+                        props.actions.go('home')
+                    }}
+                    asideContent={props.state.group === '10-4' ? <Icon24Done fill="var(--accent)"/> : null}
+                >10-4</Cell>
+                <Cell
+                    onClick={() => {
+                        props.actions.updateState({group: '10-5'});
+                        props.actions.go('home')
+                    }}
+                    asideContent={props.state.group === '10-5' ? <Icon24Done fill="var(--accent)"/> : null}
+                >10-5</Cell>
             </List>
         </Group>
     </Panel>
