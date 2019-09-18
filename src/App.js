@@ -5,6 +5,7 @@ import '@vkontakte/vkui/dist/vkui.css';
 import Home from './panels/Home';
 import ChooseGroup from './panels/ChooseGroup';
 import Timetable from "./panels/Timetable";
+import ChooseParallel from "./panels/ChooseParallel";
 
 class App extends React.Component {
 
@@ -56,11 +57,17 @@ class App extends React.Component {
             this.setState(state);
         },
 
-        setGroup: (group) => {
+        setParallel: (group) => {
+            this.actions.go('ChooseGroup');
             localStorage.setItem('group', group.group);
             this.actions.updateState(group);
+        },
+
+        setGroup: (group) => {
             this.actions.go('Timetable');
-        }
+            localStorage.setItem('group', this.state.group + group.group);
+            this.actions.updateState({group: this.state.group + group.group});
+        },
     };
 
 
@@ -68,6 +75,7 @@ class App extends React.Component {
         return (
             <View activePanel={this.state.activePanel}>
                 <Home id="home" state={this.state} actions={this.actions}/>
+                <ChooseParallel id="ChooseParallel" state={this.state} actions={this.actions}/>
                 <ChooseGroup id="ChooseGroup" state={this.state} actions={this.actions}/>
                 <Timetable id="Timetable" state={this.state} actions={this.actions}/>
             </View>

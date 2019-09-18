@@ -6,16 +6,16 @@ import '../main.css';
 const ChooseGroup = props => (
     <Panel id={props.id} theme={props.state.theme}>
         <PanelHeader>NeoWave Timetable</PanelHeader>
-        <Group>
+        <Group title="Выберите параллель">
             <List>
-                {Array.apply(0, Array(5)).map(function (x, i) {
+                {Array.apply(0, Array(6)).map(function (x, i) {
                     return <Cell
                         onClick={() => {
-                            props.actions.setGroup({group: (i + 1)});
+                            props.actions.setParallel({group: (i+6) + '-'});
                         }}
-                        asideContent={props.state.group === props.state.group + (i + 1) ?
+                        asideContent={props.state.group === (i+6) + '-' ?
                             <Icon24Done fill="var(--accent)"/> : null}
-                    >{props.state.group + (i + 1)}</Cell>;
+                    >{(i+6)}</Cell>;
                 })}
             </List>
         </Group>
